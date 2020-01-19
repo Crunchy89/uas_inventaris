@@ -3,7 +3,7 @@
 		<div class="ui segments">
 			<div class="ui segment">
 				<h5 class="ui header">
-					kondisi
+					Kondisi
 				</h5>
 			</div>
 			<div class="ui segment">
@@ -17,7 +17,7 @@
 					<thead>
 						<tr role="row">
 							<th>No</th>
-							<th>kondisi</th>
+							<th>Kondisi</th>
 							<th>Keterangan</th>
 							<th>Aksi</th>
 						</tr>

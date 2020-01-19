@@ -5,6 +5,11 @@
                 <div class="field">
                     <label>Tahun</label>
                     <input type="text" name="tahun" placeholder="tahun">
+                    <?php if (form_error('tahun')) : ?>
+                        <div class="ui red pointing label">
+                            <?= form_error('tahun') ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="field">
                     <label>Keterangan</label>

@@ -4,77 +4,45 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Inventaris_model extends CI_Model
 {
 
-    public function user_rules()
+    public function rules()
     {
         return [
             [
-                'field' => 'nama',
-                'label' => 'Nama',
+                'field' => 'inv',
+                'label' => 'Inventaris',
                 'rules'  => 'trim|required',
                 'errors' => array(
                     'required' => 'Field %s tidak boleh kosong'
                 )
             ],
             [
-                'field' => 'username',
-                'label' => 'Username',
+                'field' => 'kode',
+                'label' => 'Kode Inventaris',
+                'rules'  => 'required',
+                'errors' => array(
+                    'required' => 'Field %s tidak boleh kosong'
+                )
+            ],
+            [
+                'field' => 'sumber',
+                'label' => 'Sumber',
                 'rules'  => 'trim|required',
                 'errors' => array(
                     'required' => 'Field %s tidak boleh kosong'
                 )
             ],
             [
-                'field' => 'password',
-                'label' => 'Password',
-                'rules'  => 'required|min_length[6]',
-                'errors' => array(
-                    'required' => 'Field %s tidak boleh kosong',
-                    'min_length' => '%s minimal 6 karakter'
-                )
-            ],
-            [
-                'field' => 'level',
-                'label' => 'Level',
-                'rules'  => 'required',
-                'errors' => array(
-                    'required' => 'Field %s tidak boleh kosong'
-                )
-            ],
-            [
-                'field' => 'status',
-                'label' => 'Status',
-                'rules'  => 'required',
-                'errors' => array(
-                    'required' => 'Field %s tidak boleh kosong'
-                )
-            ]
-
-        ];
-    }
-
-    public function edit_rules()
-    {
-        return [
-            [
-                'field' => 'nama',
-                'label' => 'Nama',
+                'field' => 'ruang',
+                'label' => 'Ruangan',
                 'rules'  => 'trim|required',
                 'errors' => array(
                     'required' => 'Field %s tidak boleh kosong'
                 )
             ],
             [
-                'field' => 'level',
-                'label' => 'Level',
-                'rules'  => 'required',
-                'errors' => array(
-                    'required' => 'Field %s tidak boleh kosong'
-                )
-            ],
-            [
-                'field' => 'status',
-                'label' => 'Status',
-                'rules'  => 'required',
+                'field' => 'jenis',
+                'label' => 'Jenis',
+                'rules'  => 'trim|required',
                 'errors' => array(
                     'required' => 'Field %s tidak boleh kosong'
                 )

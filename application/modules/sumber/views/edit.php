@@ -3,7 +3,7 @@
         <div class="ui segment">
             <form action="<?= site_url('sumber/edit') ?>" method="POST" class="ui form">
                 <div class="field">
-                    <label>sumber</label>
+                    <label>Sumber</label>
                     <input type="hidden" name="id" value="<?= $sumber->id_sumber ?>">
                     <input type="text" name="sumber" value="<?= $sumber->sumber ?>">
                 </div>

@@ -17,7 +17,7 @@
 					<thead>
 						<tr role="row">
 							<th>No</th>
-							<th>satuan</th>
+							<th>Satuan</th>
 							<th>Keterangan</th>
 							<th>Aksi</th>
 						</tr>

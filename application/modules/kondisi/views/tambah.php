@@ -5,6 +5,11 @@
                 <div class="field">
                     <label>Kondisi</label>
                     <input type="text" name="kondisi" placeholder="kondisi">
+                    <?php if (form_error('kondisi')) : ?>
+                        <div class="ui red pointing label">
+                            <?= form_error('kondisi') ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="field">
                     <label>Keterangan</label>

@@ -5,10 +5,20 @@
                 <div class="field">
                     <label>Nama Ruangan</label>
                     <input type="text" name="ruang" placeholder="Nama Ruangan">
+                    <?php if (form_error('ruang')) : ?>
+                        <div class="ui red pointing label">
+                            <?= form_error('ruang') ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="field">
                     <label>Fungsi Ruangan</label>
                     <input type="text" name="fungsi" placeholder="Fungsi ruangan">
+                    <?php if (form_error('fungsi')) : ?>
+                        <div class="ui red pointing label">
+                            <?= form_error('fungsi') ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="field">
                     <label>Luas</label>

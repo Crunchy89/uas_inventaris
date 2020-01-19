@@ -3,8 +3,13 @@
         <div class="ui segment">
             <form action="<?= site_url('sumber/tambah') ?>" method="POST" class="ui form">
                 <div class="field">
-                    <label>sumber</label>
+                    <label>Sumber</label>
                     <input type="text" name="sumber" placeholder="Sumber">
+                    <?php if (form_error('sumber')) : ?>
+                        <div class="ui red pointing label">
+                            <?= form_error('sumber') ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="field">
                     <label>Keterangan</label>

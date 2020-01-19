@@ -5,6 +5,11 @@
                 <div class="field">
                     <label>Jenis</label>
                     <input type="text" name="jenis" placeholder="Jenis">
+                    <?php if (form_error('jenis')) : ?>
+                        <div class="ui red pointing label">
+                            <?= form_error('jenis') ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <div class="field">
                     <label>Keterangan</label>
