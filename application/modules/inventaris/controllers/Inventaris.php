@@ -17,6 +17,15 @@ class Inventaris extends MY_Controller
 	public function index()
 	{
 		$data['title'] = 'Inventaris';
+		$data['inventaris'] = $this->db->query("SELECT sumber.*,jenis.*,ruang.*,inventaris.* FROM inventaris INNER JOIN sumber on inventaris.id_sumber=sumber.id_sumber INNER JOIN jenis ON inventaris.id_jenis=jenis.id_jenis INNER JOIN ruang ON inventaris.id_ruangan=ruang.id_ruangan")->result();
 		admin_page('index', $data);
+	}
+	public function tambah()
+	{
+		$data['title'] = 'Tambah Inventaris';
+		$data['ruang'] = $this->db->get('ruang')->result();
+		$data['jenis'] = $this->db->get('jenis')->result();
+		$data['sumber'] = $this->db->get('sumber')->result();
+		admin_page('tambah', $data);
 	}
 }
