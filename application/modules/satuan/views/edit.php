@@ -1,17 +1,17 @@
 <div class="row">
     <div class="sixteen wide column">
         <div class="ui segment">
-            <form action="<?= site_url('admin/edit') ?>" method="post" class="ui form">
+            <form action="<?= site_url('satuan/edit') ?>" method="POST" class="ui form">
                 <div class="field">
-                    <input type="hidden" name="id" value="<?= $user->id_user ?>">
-                    <label>Username</label>
-                    <input type="text" name="user" value="<?= $user->username ?>">
+                    <label>Satuan</label>
+                    <input type="hidden" name="id" value="<?= $satuan->id_satuan ?>">
+                    <input type="text" name="satuan" value="<?= $satuan->satuan ?>">
                 </div>
                 <div class="field">
-                    <label>Password</label>
-                    <input type="text" name="pass" value="<?= $user->password ?>">
+                    <label>Keterangan</label>
+                    <textarea rows="2" name="ket"><?= $satuan->ket_satuan ?></textarea>
                 </div>
-                <a href="<?= site_url('admin') ?>" class="ui red animated button" tabindex="0">
+                <a href="<?= site_url('satuan') ?>" class="ui red animated button" tabindex="0">
                     <div class="visible content">Kembali</div>
                     <div class="hidden content">
                         <i class="left arrow icon"></i>

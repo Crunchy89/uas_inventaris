@@ -37,7 +37,24 @@
                 <a class="item" href="<?= site_url('admin') ?>">
                     User
                 </a>
-
+                <a class="item" href="<?= site_url('jenis') ?>">
+                    Jenis
+                </a>
+                <a class="item" href="<?= site_url('kondisi') ?>">
+                    Kondisi
+                </a>
+                <a class="item" href="<?= site_url('ruang') ?>">
+                    Ruang
+                </a>
+                <a class="item" href="<?= site_url('satuan') ?>">
+                    Satuan
+                </a>
+                <a class="item" href="<?= site_url('sumber') ?>">
+                    Sumber
+                </a>
+                <a class="item" href="<?= site_url('tahun') ?>">
+                    Tahun
+                </a>
             </div>
 
         </div>
@@ -97,6 +114,24 @@
                         <div class="content">
                             <a class="item" href="<?= site_url('admin') ?>">
                                 User <i class="user icon"></i>
+                            </a>
+                            <a class="item" href="<?= site_url('jenis') ?>">
+                                Jenis <i class="clipboard icon"></i>
+                            </a>
+                            <a class="item" href="<?= site_url('kondisi') ?>">
+                                Kondisi <i class="eye icon"></i>
+                            </a>
+                            <a class="item" href="<?= site_url('ruang') ?>">
+                                Ruang <i class="building icon"></i>
+                            </a>
+                            <a class="item" href="<?= site_url('satuan') ?>">
+                                Satuan <i class="file icon"></i>
+                            </a>
+                            <a class="item" href="<?= site_url('sumber') ?>">
+                                Sumber <i class="tasks icon"></i>
+                            </a>
+                            <a class="item" href="<?= site_url('tahun') ?>">
+                                Tahun <i class="calendar icon"></i>
                             </a>
                         </div>
                     </div>
