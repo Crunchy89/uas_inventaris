@@ -4,7 +4,7 @@
             <div class="ui segment">
                 <div class="field">
                     <label>Nama Ruangan</label>
-                    <input type="text" name="ruang" placeholder="Nama Ruangan">
+                    <input type="text" name="ruang" placeholder="Nama Ruangan" value="<?= set_value('ruang') ?>">
                     <?php if (form_error('ruang')) : ?>
                         <div class="ui red pointing label">
                             <?= form_error('ruang') ?>
@@ -13,7 +13,7 @@
                 </div>
                 <div class="field">
                     <label>Fungsi Ruangan</label>
-                    <input type="text" name="fungsi" placeholder="Fungsi ruangan">
+                    <input type="text" name="fungsi" placeholder="Fungsi ruangan" value="<?= set_value('fungsi') ?>">
                     <?php if (form_error('fungsi')) : ?>
                         <div class="ui red pointing label">
                             <?= form_error('fungsi') ?>

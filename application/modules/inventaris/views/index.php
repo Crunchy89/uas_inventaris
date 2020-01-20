@@ -43,7 +43,7 @@
                                 <td><?= $row->jenis ?></td>
                                 <td><?= $row->nilai_wajar ?></td>
                                 <td><?= $row->tanggal ?></td>
-                                <td><?= $row->gambar ?></td>
+                                <td><img src="<?= base_url('assets/img/inventaris/') . $row->gambar ?>" width="50px"></td>
                                 <td>
                                     <form action="<?= site_url('inventaris/edit') ?>" method="post">
                                         <input type="hidden" name="id" value="<?= $row->id_inv ?>">

@@ -22,10 +22,38 @@ class Inventaris extends MY_Controller
 	}
 	public function tambah()
 	{
-		$data['title'] = 'Tambah Inventaris';
-		$data['ruang'] = $this->db->get('ruang')->result();
-		$data['jenis'] = $this->db->get('jenis')->result();
-		$data['sumber'] = $this->db->get('sumber')->result();
-		admin_page('tambah', $data);
+		$model = $this->inventaris_model;
+		$form = $this->form_validation;
+		$form->set_rules($model->rules());
+		if ($form->run()) {
+			$model->tambah();
+		} else {
+			$data['title'] = 'Tambah Inventaris';
+			$data['ruang'] = $this->db->get('ruang')->result();
+			$data['jenis'] = $this->db->get('jenis')->result();
+			$data['sumber'] = $this->db->get('sumber')->result();
+			admin_page('tambah', $data);
+		}
+	}
+	public function edit()
+	{
+		$model = $this->inventaris_model;
+		$form = $this->form_validation;
+		$form->set_rules($model->rules());
+		if ($form->run()) {
+			$model->edit();
+		} else {
+			$id = $this->input->post('id');
+			$data['title'] = 'Tambah Inventaris';
+			$data['ruang'] = $this->db->get('ruang')->result();
+			$data['jenis'] = $this->db->get('jenis')->result();
+			$data['sumber'] = $this->db->get('sumber')->result();
+			$data['inv'] = $this->db->get_where('inventaris', ['id_inv' => $id])->row();
+			admin_page('edit', $data);
+		}
+	}
+	public function hapus()
+	{
+		$this->inventaris_model->delete();
 	}
 }

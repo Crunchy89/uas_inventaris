@@ -4,7 +4,7 @@
             <form action="<?= site_url('tahun/tambah') ?>" method="POST" class="ui form">
                 <div class="field">
                     <label>Tahun</label>
-                    <input type="text" name="tahun" placeholder="tahun">
+                    <input type="text" name="tahun" placeholder="tahun" value="<?= set_value('tahun') ?>">
                     <?php if (form_error('tahun')) : ?>
                         <div class="ui red pointing label">
                             <?= form_error('tahun') ?>

@@ -4,7 +4,7 @@
             <form action="<?= site_url('sumber/tambah') ?>" method="POST" class="ui form">
                 <div class="field">
                     <label>Sumber</label>
-                    <input type="text" name="sumber" placeholder="Sumber">
+                    <input type="text" name="sumber" placeholder="Sumber" value="<?= set_value('sumber') ?>">
                     <?php if (form_error('sumber')) : ?>
                         <div class="ui red pointing label">
                             <?= form_error('sumber') ?>

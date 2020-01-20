@@ -1,87 +1,64 @@
 <div class="row">
     <div class="sixteen wide column">
-        <form action="<?= site_url('inventaris/tambah') ?>" method="POST" class="ui form" enctype="multipart/form-data">
+        <form action="<?= site_url('inventaris/edit') ?>" method="POST" class="ui form" enctype="multipart/form-data">
             <div class="ui segment">
                 <div class="two fields">
                     <div class="field">
                         <label>Nama inventaris</label>
-                        <input type="text" name="inv" placeholder="Nama Inventaris" value="<?= set_value('inv') ?>">
-                        <?php if (form_error('inv')) : ?>
-                            <div class="ui red pointing label">
-                                <?= form_error('inv') ?>
-                            </div>
-                        <?php endif; ?>
+                        <input type="text" name="inv" placeholder="Nama Inventaris" value="<?= $inv->nama_barang ?>">
                     </div>
                     <div class="field">
                         <label>Kode Inventaris</label>
-                        <input type="text" name="kode" placeholder="Kode Inventaris" value="<?= set_value('kode') ?>">
-                        <?php if (form_error('kode')) : ?>
-                            <div class="ui red pointing label">
-                                <?= form_error('kode') ?>
-                            </div>
-                        <?php endif; ?>
+                        <input type="text" name="kode" placeholder="Kode Inventaris" value="<?= $inv->kode_inv ?>">
                     </div>
                 </div>
                 <div class="three fields">
                     <div class="field">
                         <label>Ruangan</label>
                         <select class="ui search dropdown" id="ruang" name="ruang">
-                            <option value="">Pilih Ruangan</option>
+                            <option value="<?= $inv->id_ruangan ?>">Pilih Ruang</option>
                             <?php foreach ($ruang as $ruangs) : ?>
                                 <option value="<?= $ruangs->id_ruangan ?>"><?= $ruangs->nama_ruangan ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <?php if (form_error('ruang')) : ?>
-                            <div class="ui red pointing label">
-                                <?= form_error('ruang') ?>
-                            </div>
-                        <?php endif; ?>
                     </div>
                     <div class="field">
                         <label>Sumber</label>
                         <select class="ui search dropdown" id="sumber" name="sumber">
-                            <option value="">Pilih Sumber</option>
+                            <option value="<?= $inv->id_sumber ?>">Pilih Sumber</option>
                             <?php foreach ($sumber as $row) : ?>
                                 <option value="<?= $row->id_sumber ?>"><?= $row->sumber ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <?php if (form_error('sumber')) : ?>
-                            <div class="ui red pointing label">
-                                <?= form_error('sumber') ?>
-                            </div>
-                        <?php endif; ?>
                     </div>
                     <div class="field">
                         <label>Jenis</label>
                         <select class="ui search dropdown" id="jenis" name="jenis">
-                            <option value="">Pilih Jenis</option>
+                            <option value="<?= $inv->id_jenis ?>">Pilih Jenis</option>
                             <?php foreach ($jenis as $row) : ?>
                                 <option value="<?= $row->id_jenis ?>"><?= $row->jenis ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <?php if (form_error('jenis')) : ?>
-                            <div class="ui red pointing label">
-                                <?= form_error('jenis') ?>
-                            </div>
-                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="three fields">
                     <div class="field">
                         <label>Merek</label>
-                        <input type="text" name="merek" placeholder="Merek">
+                        <input type="text" name="merek" placeholder="Merek" value="<?= $inv->merek ?>">
                     </div>
                     <div class="field">
                         <label>Seri</label>
-                        <input type="text" name="seri" placeholder="Seri">
+                        <input type="text" name="seri" placeholder="Seri" <?= $inv->seri ?>>
                     </div>
                     <div class="field">
                         <label>Nilai Wajar</label>
-                        <input type="text" name="nilai" placeholder="Nilai Wajar">
+                        <input type="text" name="nilai" placeholder="Nilai Wajar" <?= $inv->nilai_wajar ?>>
                     </div>
                 </div>
                 <div class="field">
-                    <img class="ui small image" src="<?= base_url() ?>assets/img/noimage.png" id="output">
+                    <input type="hidden" name="gambarLama" value="<?= $inv->gambar ?>">
+                    <input type="hidden" name="id" value="<?= $inv->id_inv ?>">
+                    <img class="ui small image" src="<?= base_url('assets/img/inventaris/') . $inv->gambar ?>" id="output">
                     <label>Gambar</label>
                     <input type="file" accept="image/*" onchange="loadFile(event)" id="gambar" name="gambar">
                 </div>
@@ -91,7 +68,7 @@
                         <i class="left arrow icon"></i>
                     </div>
                 </a>
-                <button class="ui green button" type="submit">Tambah</button>
+                <button class="ui green button" type="submit">Ubah</button>
             </div>
         </form>
     </div>
