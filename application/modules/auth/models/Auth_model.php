@@ -35,7 +35,7 @@ class Auth_model extends CI_Model
                     'siteman' => TRUE
                 ];
                 $this->session->set_userdata($data);
-                redirect('admin');
+                redirect('dashboard');
             } else {
                 $this->session->set_flashdata('message', '<div class="card-alert card red lighten-5">
             <div class="card-content red-text center-align">

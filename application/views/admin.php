@@ -25,7 +25,7 @@
     </div>
     <!--sidebar mobile-->
     <div class="ui vertical push sidebar menu  thin left" id="toc">
-        <a class="item" href="<?= site_url('inventaris') ?>">
+        <a class="item" href="<?= site_url('dashboard') ?>">
             Dashboard
         </a>
         <a class="item">
@@ -37,6 +37,9 @@
                 Master
             </div>
             <div class="content">
+                <a class="item" href="<?= site_url('inventaris') ?>">
+                    Inventaris
+                </a>
                 <a class="item" href="<?= site_url('jenis') ?>">
                     Jenis
                 </a>
@@ -105,7 +108,7 @@
             <!--Load Sidebar Menu In App.js loadhtml function-->
             <div class="toc">
                 <div class="ui visible left vertical sidebar menu no-border sidemenu" tabindex="5000" style="overflow: hidden; outline: none;">
-                    <a class="item" href="<?= site_url('inventaris') ?>">
+                    <a class="item" href="<?= site_url('dashboard') ?>">
                         Dashboard <i class="archive icon"></i>
                     </a>
                     <a class="item">
@@ -118,6 +121,9 @@
                             Master
                         </div>
                         <div class="content">
+                            <a class="item" href="<?= site_url('inventaris') ?>">
+                                Inventaris <i class="archive icon"></i>
+                            </a>
                             <a class="item" href="<?= site_url('jenis') ?>">
                                 Jenis <i class="clipboard icon"></i>
                             </a>

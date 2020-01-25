@@ -46,8 +46,20 @@ class Inventaris_model extends CI_Model
                 'errors' => array(
                     'required' => 'Field %s tidak boleh kosong'
                 )
+            ],
+            [
+                'field' => 'kondisi',
+                'label' => 'Kondisi',
+                'rules'  => 'trim|required',
+                'errors' => array(
+                    'required' => 'Field %s tidak boleh kosong'
+                )
             ]
         ];
+    }
+    public function join()
+    {
+        return $this->db->query("SELECT inventaris.*,jenis.*,sumber.*,kondisi.*,tahun.*,ruang.* FROM inventaris INNER JOIN jenis on inventaris.id_jenis=jenis.id_jenis INNER JOIN sumber on inventaris.id_sumber=sumber.id_sumber INNER JOIN kondisi on inventaris.id_kondisi=kondisi.id_kondisi INNER JOIN tahun on inventaris.id_tahun=tahun.id_tahun INNER JOIN ruang on inventaris.id_ruangan=ruang.id_ruangan")->result();
     }
     public function tambah()
     {
@@ -60,6 +72,8 @@ class Inventaris_model extends CI_Model
         $db->set('id_ruangan', $post['ruang']);
         $db->set('id_sumber', $post['sumber']);
         $db->set('id_jenis', $post['jenis']);
+        $db->set('id_kondisi', $post['kondisi']);
+        $db->set('id_tahun', $post['tahun']);
         $db->set('seri', $post['seri']);
         $db->set('merek', $post['merek']);
         $db->set('nilai_wajar', $post['nilai']);
@@ -85,7 +99,9 @@ class Inventaris_model extends CI_Model
         $db->set('kode_inv', $post['kode']);
         $db->set('id_ruangan', $post['ruang']);
         $db->set('id_sumber', $post['sumber']);
+        $db->set('id_kondisi', $post['kondisi']);
         $db->set('id_jenis', $post['jenis']);
+        $db->set('id_tahun', $post['tahun']);
         $db->set('seri', $post['seri']);
         $db->set('merek', $post['merek']);
         $db->set('nilai_wajar', $post['nilai']);

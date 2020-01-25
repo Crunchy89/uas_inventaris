@@ -17,14 +17,15 @@
                     <thead>
                         <tr role="row">
                             <th>No</th>
-                            <th>Nama Barang</th>
+                            <th>Barang</th>
                             <th>Merek</th>
-                            <th>Kode Inventaris</th>
+                            <th>Kd Inventaris</th>
                             <th>Sumber</th>
                             <th>Seri</th>
                             <th>Jenis</th>
+                            <th>Kondisi</th>
                             <th>Nilai Wajar</th>
-                            <th>Tanggal</th>
+                            <th>Tahun</th>
                             <th>Gambar</th>
                             <th>Aksi</th>
                         </tr>
@@ -41,8 +42,9 @@
                                 <td><?= $row->sumber ?></td>
                                 <td><?= $row->seri ?></td>
                                 <td><?= $row->jenis ?></td>
+                                <td><?= $row->kondisi ?></td>
                                 <td><?= $row->nilai_wajar ?></td>
-                                <td><?= $row->tanggal ?></td>
+                                <td><?= $row->tahun ?></td>
                                 <td><img src="<?= base_url('assets/img/inventaris/') . $row->gambar ?>" width="50px"></td>
                                 <td>
                                     <form action="<?= site_url('inventaris/edit') ?>" method="post">

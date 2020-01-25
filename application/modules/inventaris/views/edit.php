@@ -55,12 +55,32 @@
                         <input type="text" name="nilai" placeholder="Nilai Wajar" <?= $inv->nilai_wajar ?>>
                     </div>
                 </div>
-                <div class="field">
-                    <input type="hidden" name="gambarLama" value="<?= $inv->gambar ?>">
-                    <input type="hidden" name="id" value="<?= $inv->id_inv ?>">
-                    <img class="ui small image" src="<?= base_url('assets/img/inventaris/') . $inv->gambar ?>" id="output">
-                    <label>Gambar</label>
-                    <input type="file" accept="image/*" onchange="loadFile(event)" id="gambar" name="gambar">
+                <div class="three fields">
+                    <div class="field">
+                        <label>Kondisi</label>
+                        <select class="ui search dropdown" id="kondisi" name="kondisi">
+                            <option value="<?= $inv->id_kondisi ?>">Pilih Kondisi</option>
+                            <?php foreach ($kondisi as $row) : ?>
+                                <option value="<?= $row->id_kondisi ?>"><?= $row->kondisi ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Tahun</label>
+                        <select class="ui search dropdown" id="tahun" name="tahun">
+                            <option value="<?= $inv->id_kondisi ?>">Pilih Tahun</option>
+                            <?php foreach ($kondisi as $row) : ?>
+                                <option value="<?= $row->id_tahun ?>"><?= $row->tahun ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <input type="hidden" name="gambarLama" value="<?= $inv->gambar ?>">
+                        <input type="hidden" name="id" value="<?= $inv->id_inv ?>">
+                        <img class="ui small image" src="<?= base_url('assets/img/inventaris/') . $inv->gambar ?>" id="output">
+                        <label>Gambar</label>
+                        <input type="file" accept="image/*" onchange="loadFile(event)" id="gambar" name="gambar">
+                    </div>
                 </div>
                 <a href="<?= site_url('inventaris') ?>" class="ui red animated button" tabindex="0">
                     <div class="visible content">Kembali</div>
