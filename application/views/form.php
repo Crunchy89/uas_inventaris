@@ -45,15 +45,6 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="fas fa-fw fa-user"></i> Admin
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-fw fa-sign-out-alt mr-2"></i> Logout
-                        </a>
-                </li>
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -129,29 +120,6 @@
                                     <a href="<?= site_url('tahun') ?>" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Tahun</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-laptop"></i>
-                                <p>
-                                    Admin
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="<?= site_url('user') ?>" class="nav-link">
-                                        <i class="fas fa-users nav-icon"></i>
-                                        <p>User</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="<?= site_url('auth/logout') ?>" class="nav-link">
-                                        <i class="fas fa-sign-out-alt nav-icon"></i>
-                                        <p>Logout</p>
                                     </a>
                                 </li>
                             </ul>
