@@ -2,198 +2,204 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <!-- Site Properities -->
-    <meta name="generator" content="Visual Studio 2015">
-    <title><?= $title ?></title>
-    <meta name="description" content="Golgi Admin Theme">
-    <meta name="keywords" content="html5, ,semantic,ui, library, framework, javascript,jquery,admin,theme">
-    <link href="<?= base_url() ?>assets/css/semantic.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>assets/css/main.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>assets/css/pace.css" rel="stylesheet">
-    <script src="<?= base_url() ?>assets/js/jquery-2.1.4.min.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><?= $title ?></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?= base_url() ?>assets/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="admin  pushable pace-done" style="overflow: hidden;">
-    <div class="pace  pace-inactive">
-        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-            <div class="pace-progress-inner"></div>
-        </div>
-        <div class="pace-activity"></div>
-    </div>
-    <!--sidebar mobile-->
-    <div class="ui vertical push sidebar menu  thin left" id="toc">
-        <a class="item" href="<?= site_url('dashboard') ?>">
-            Dashboard
-        </a>
-        <a class="item">
-            <b>Main</b>
-        </a>
-        <div class="content">
-            <div class="title">
-                <i class="dropdown icon"></i>
-                Master
-            </div>
-            <div class="content">
-                <a class="item" href="<?= site_url('inventaris') ?>">
-                    Inventaris
-                </a>
-                <a class="item" href="<?= site_url('jenis') ?>">
-                    Jenis
-                </a>
-                <a class="item" href="<?= site_url('kondisi') ?>">
-                    Kondisi
-                </a>
-                <a class="item" href="<?= site_url('ruang') ?>">
-                    Ruang
-                </a>
-                <a class="item" href="<?= site_url('satuan') ?>">
-                    Satuan
-                </a>
-                <a class="item" href="<?= site_url('sumber') ?>">
-                    Sumber
-                </a>
-                <a class="item" href="<?= site_url('tahun') ?>">
-                    Tahun
-                </a>
-            </div>
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
 
-        </div>
-        <a class="item">
-            <b>Admin Menu</b>
-        </a>
-        <div class="content">
-            <div class="title">
-                <i class="dropdown icon"></i>
-                Admin Profile
-            </div>
-            <div class="content">
-                <a class="item" href="<?= site_url('admin') ?>">
-                    User
-                </a>
-                <a class="item" href="<?= site_url('auth/logout') ?>">
-                    Logout
-                </a>
-
-            </div>
-
-        </div>
-    </div>
-    <!--sidebar mobile-->
-    <!--navbar mobile-->
-    <div class="mobilenavbar">
-        <div class="ui fixed main menu push no-border no-radius sidemenu2 borderless">
-
-            <a class="launch icon item" style="padding-top:20px">
-                <i class="content icon"></i>
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-fw fa-user"></i> Admin
+          </a>
+          <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-fw fa-sign-out-alt mr-2"></i> Logout
             </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
 
-            <div class="right menu">
-                <img class="ui mini circular image" src="<?= base_url() ?>assets/img/user.png">
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="<?= site_url('dashboard') ?>" class="brand-link">
+        <img src="<?= base_url() ?>assets/img/user.png" alt="profile" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Admin</span>
+      </a>
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item">
+              <a href="<?= site_url('dashboard') ?>" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-key"></i>
+                <p>
+                  Master
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?= site_url('inventaris') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Inventaris</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= site_url('ruang') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Ruangan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= site_url('jenis') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Jenis</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= site_url('kondisi') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Kondisi</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= site_url('sumber') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Sumber</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= site_url('satuan') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Satuan</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= site_url('tahun') ?>" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tahun</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-laptop"></i>
+                <p>
+                  Admin
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?= site_url('user') ?>" class="nav-link">
+                    <i class="fas fa-users nav-icon"></i>
+                    <p>User</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= site_url('auth/logout') ?>" class="nav-link">
+                    <i class="fas fa-sign-out-alt nav-icon"></i>
+                    <p>Logout</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
 
-                <div class="menu" tabindex="-1">
-                    <a href="<?= site_url('auth/logout') ?>" class="item">Sign Out</a>
-                </div>
-            </div>
-        </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <?= $view ?>
 
+      <!-- /.content -->
     </div>
-    </div>
-    <!--navbar mobile-->
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="float-right d-none d-sm-block">
+        Ferdy Barliansyah R.
+      </div>
+      <strong>Copyright &copy; 2020
+    </footer>
 
-    <div class="pusher">
-        <div class="full height">
-            <!--Load Sidebar Menu In App.js loadhtml function-->
-            <div class="toc">
-                <div class="ui visible left vertical sidebar menu no-border sidemenu" tabindex="5000" style="overflow: hidden; outline: none;">
-                    <a class="item" href="<?= site_url('dashboard') ?>">
-                        Dashboard <i class="archive icon"></i>
-                    </a>
-                    <a class="item">
-                        <b>Main</b>
-                    </a>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
 
-                    <div class="ui accordion">
-                        <div class="title">
-                            <i class="dropdown icon"></i>
-                            Master
-                        </div>
-                        <div class="content">
-                            <a class="item" href="<?= site_url('inventaris') ?>">
-                                Inventaris <i class="archive icon"></i>
-                            </a>
-                            <a class="item" href="<?= site_url('jenis') ?>">
-                                Jenis <i class="clipboard icon"></i>
-                            </a>
-                            <a class="item" href="<?= site_url('kondisi') ?>">
-                                Kondisi <i class="eye icon"></i>
-                            </a>
-                            <a class="item" href="<?= site_url('ruang') ?>">
-                                Ruang <i class="building icon"></i>
-                            </a>
-                            <a class="item" href="<?= site_url('satuan') ?>">
-                                Satuan <i class="file icon"></i>
-                            </a>
-                            <a class="item" href="<?= site_url('sumber') ?>">
-                                Sumber <i class="tasks icon"></i>
-                            </a>
-                            <a class="item" href="<?= site_url('tahun') ?>">
-                                Tahun <i class="calendar icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <a class="item">
-                        <b>Admin Menu</b>
-                    </a>
-                    <div class="ui accordion">
-                        <div class="title">
-                            <i class="dropdown icon"></i>
-                            Admin Profile
-                        </div>
-                        <div class="content">
-                            <a class="item" href="<?= site_url('admin') ?>">
-                                User <i class="user icon"></i>
-                            </a>
-                            <a class="item" href="<?= site_url('auth/logout') ?>">
-                                Logout
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="article">
-                <div class="navbarmenu">
-                    <div class="ui fixed top  menu no-border no-radius borderless navmenu">
-                        <a class="item active no-padding logo" style="width:250px;" href="<?= site_url('admin') ?>">
+  <!-- jQuery -->
+  <script src="<?= base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="<?= base_url() ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables -->
+  <script src="<?= base_url() ?>assets/plugins/datatables/jquery.dataTables.js"></script>
+  <script src="<?= base_url() ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+  <!-- AdminLTE App -->
+  <script src="<?= base_url() ?>assets/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="<?= base_url() ?>assets/dist/js/demo.js"></script>
+  <!-- page script -->
+  <script>
+    $(function() {
+      $("#example1").DataTable();
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+      });
+    });
+  </script>
+</body>
 
-                            <h3 class="ui image logoImg">Admin</h3>
-                        </a>
-                        <a class="item hamburger" data-name="show">
-                            <i class="align justify icon"></i>
-                        </a>
-                        <div class="right menu">
-                            <div class="ui dropdown item" tabindex="0">
-                                <img class="ui mini circular image" src="<?= base_url() ?>assets/img/user.png">
-                                <div class="menu" tabindex="-1">
-                                    <a class="item" href="<?= site_url('auth/logout') ?>">Sign Out</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="containerli">
-                    <div class="ui equal width left aligned padded grid stackable">
-                        <?= $view ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="<?= base_url() ?>assets/js/jquery.nicescroll.min.js"></script>
-    <script src="<?= base_url() ?>assets/js/semantic.min.js"></script>
-    <script data-pace-options="{ &quot;ajax&quot;: false }" src="<?= base_url() ?>assets/js/pace.js"></script>
-    <script src="<?= base_url() ?>assets/js/jquery.dataTables.js"></script>
-    <script src="<?= base_url() ?>assets/js/custom-datatable.js"></script>
-    <script src="<?= base_url() ?>assets/js/app.min.js"></script>
+</html>

@@ -5,9 +5,6 @@ class Sumber extends MY_Controller
 {
 	public function __construct()
 	{
-		if (!$this->session->userdata('siteman')) {
-			redirect('auth');
-		}
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->model('sumber_model');
@@ -30,7 +27,7 @@ class Sumber extends MY_Controller
 			admin_page('tambah', $data);
 		}
 	}
-	public function edit()
+	public function edit($id = null)
 	{
 		$model = $this->sumber_model;
 		$form = $this->form_validation;
@@ -38,7 +35,6 @@ class Sumber extends MY_Controller
 		if ($form->run()) {
 			$model->edit();
 		} else {
-			$id = $this->input->post('id');
 			$data['title'] = "Ubah sumber";
 			$data['sumber'] = $this->db->get_where('sumber', ['id_sumber' => $id])->row();
 			admin_page('edit', $data);

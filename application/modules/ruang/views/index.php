@@ -1,89 +1,76 @@
-<div class="row">
-	<div class="sixteen wide column">
-		<div class="ui segments">
-			<div class="ui segment">
-				<h5 class="ui header">
-					Ruang
-				</h5>
+<section class="content-header">
+	<div class="container-fluid">
+		<div class="row mb-2">
+			<div class="col-sm-6">
+				<h1>Ruangan</h1>
 			</div>
-			<div class="ui segment">
-				<a href="<?= site_url('ruang/tambah') ?>" class="ui primary vertical animated button" tabindex="0">
-					<div class="hidden content">Tambah</div>
-					<div class="visible content">
-						<i class="add icon"></i>
-					</div>
-				</a>
-				<table id="data_table" class="ui compact selectable striped celled table dataTable no-footer">
-					<thead>
-						<tr role="row">
-							<th>No</th>
-							<th>Ruangan</th>
-							<th>Fungsi</th>
-							<th>Luas</th>
-							<th>Gambar</th>
-							<th>Aksi</th>
-						</tr>
-					</thead>
+		</div>
+	</div><!-- /.container-fluid -->
+</section>
+<section class="content">
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header">
+					<a href="<?= site_url('ruang/tambah') ?>" class="btn btn-success"><i class="fas fa-plus"></i> Tambah Data</a>
+				</div>
+				<!-- /.card-header -->
+				<div class="card-body">
+					<div class="table-responsive">
+						<table id="example1" class="table table-sm table-bordered table-striped" style="width: 100%">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Ruangan</th>
+									<th>Fungsi</th>
+									<th>Luas</th>
+									<th>Gambar</th>
+									<th>Aksi</th>
+								</tr>
+							</thead>
 
-					<tbody>
-						<?php $i = 1;
-						foreach ($ruang as $row) { ?>
-							<tr>
-								<td><?= $i++ ?></td>
-								<td><?= $row->nama_ruangan ?></td>
-								<td><?= $row->fungsi_ruangan ?></td>
-								<td><?= $row->luas ?></td>
-								<td><img class="ui small image" src="<?= base_url('assets/img/ruangan/') . $row->gbr_ruangan ?>"></td>
-								<td>
-									<form action="<?= site_url('ruang/edit') ?>" method="post">
-										<input type="hidden" name="id" value="<?= $row->id_ruangan ?>">
-										<button type="submit" class="ui yellow vertical animated button" tabindex="0">
-											<div class="hidden content">Edit</div>
-											<div class="visible content">
-												<i class="edit icon"></i>
+							<tbody>
+								<?php $i = 1;
+								foreach ($ruang as $row) { ?>
+									<tr>
+										<td><?= $i++ ?></td>
+										<td><?= $row->nama_ruangan ?></td>
+										<td><?= $row->fungsi_ruangan ?></td>
+										<td><?= $row->luas ?></td>
+										<td><img src="<?= base_url('assets/img/ruangan/') . $row->gbr_ruangan ?>" width="50px"></td>
+										<td>
+											<a href="<?= site_url('ruang/edit/') . $row->id_ruangan ?>" class="btn btn-sm btn-warning m-1"><i class="fas fa-pen"></i></a>
+											<button type="button" data-toggle="modal" data-target="#hapus<?= $row->id_ruangan ?>" class="btn btn-sm btn-danger m-1"><i class="fas fa-trash"></i></button>
+										</td>
+									</tr>
+									<div class="modal fade" id="hapus<?= $row->id_ruangan ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<form action="<?= site_url('ruang/hapus') ?>" method="post">
+													<div class="modal-body">
+														<h3>Apakah anda yakin ?</h3>
+														<input type="hidden" name="id" value="<?= $row->id_ruangan ?>">
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+														<button type="submit" class="btn btn-primary">Hapus</button>
+													</div>
 											</div>
-										</button>
-										<div onclick="hapus(<?= $row->id_ruangan ?>)" class="ui red horizontal animated button" tabindex="0">
-											<div class="hidden content">Hapus</div>
-											<div class="visible content">
-												<i class="trash icon"></i>
-											</div>
+											</form>
 										</div>
-									</form>
-								</td>
-							</tr>
-							<div class="ui basic modal" id="hapus<?= $row->id_ruangan ?>">
-								<div class="ui icon header">
-									<i class="trash icon"></i>
-									Hapus <?= $row->nama_ruangan ?> ?
-								</div>
-								<div class="content">
-									<p>Data yang sudah dihapus tidak bisa dikembalikan, apakah anda yakin ?</p>
-								</div>
-								<form action="<?= site_url('ruang/hapus') ?>" method="post">
-									<input type="hidden" name="id" value="<?= $row->id_ruangan ?>">
-									<div class="actions">
-										<div class="ui red basic cancel inverted button">
-											<i class="remove icon"></i>
-											Tidak
-										</div>
-										<button type="submit" class="ui green ok inverted button">
-											<i class="checkmark icon"></i>
-											Ya
-										</button>
 									</div>
-								</form>
-							</div>
-							<script>
-								function hapus(id) {
-									$('#hapus' + id)
-										.modal('show');
-								}
-							</script>
-						<?php } ?>
-					</tbody>
-				</table>
+								<?php } ?>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>

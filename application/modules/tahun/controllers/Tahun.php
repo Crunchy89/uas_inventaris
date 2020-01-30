@@ -5,9 +5,6 @@ class Tahun extends MY_Controller
 {
 	public function __construct()
 	{
-		if (!$this->session->userdata('siteman')) {
-			redirect('auth');
-		}
 		parent::__construct();
 		$this->load->library('form_validation');
 		$this->load->model('tahun_model');
@@ -30,7 +27,7 @@ class Tahun extends MY_Controller
 			admin_page('tambah', $data);
 		}
 	}
-	public function edit()
+	public function edit($id = null)
 	{
 		$model = $this->tahun_model;
 		$form = $this->form_validation;
@@ -38,7 +35,6 @@ class Tahun extends MY_Controller
 		if ($form->run()) {
 			$model->edit();
 		} else {
-			$id = $this->input->post('id');
 			$data['title'] = "Ubah tahun";
 			$data['tahun'] = $this->db->get_where('tahun', ['id_tahun' => $id])->row();
 			admin_page('edit', $data);

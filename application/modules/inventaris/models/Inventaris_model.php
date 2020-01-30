@@ -9,7 +9,7 @@ class Inventaris_model extends CI_Model
         return [
             [
                 'field' => 'inv',
-                'label' => 'Inventaris',
+                'label' => 'Nama Inventaris',
                 'rules'  => 'trim|required',
                 'errors' => array(
                     'required' => 'Field %s tidak boleh kosong'
@@ -50,6 +50,14 @@ class Inventaris_model extends CI_Model
             [
                 'field' => 'kondisi',
                 'label' => 'Kondisi',
+                'rules'  => 'trim|required',
+                'errors' => array(
+                    'required' => 'Field %s tidak boleh kosong'
+                )
+            ],
+            [
+                'field' => 'tahun',
+                'label' => 'Tahun',
                 'rules'  => 'trim|required',
                 'errors' => array(
                     'required' => 'Field %s tidak boleh kosong'

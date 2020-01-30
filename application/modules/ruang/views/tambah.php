@@ -1,46 +1,73 @@
-<div class="row">
-    <div class="sixteen wide column">
-        <form action="<?= site_url('ruang/tambah') ?>" method="POST" class="ui form" enctype="multipart/form-data">
-            <div class="ui segment">
-                <div class="field">
-                    <label>Nama Ruangan</label>
-                    <input type="text" name="ruang" placeholder="Nama Ruangan" value="<?= set_value('ruang') ?>">
-                    <?php if (form_error('ruang')) : ?>
-                        <div class="ui red pointing label">
-                            <?= form_error('ruang') ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <div class="field">
-                    <label>Fungsi Ruangan</label>
-                    <input type="text" name="fungsi" placeholder="Fungsi ruangan" value="<?= set_value('fungsi') ?>">
-                    <?php if (form_error('fungsi')) : ?>
-                        <div class="ui red pointing label">
-                            <?= form_error('fungsi') ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <div class="field">
-                    <label>Luas</label>
-                    <input type="text" name="luas" placeholder="Luas">
-                </div>
-                <div class="field">
-                    <img class="ui small image" src="<?= base_url() ?>assets/img/noimage.png" id="output">
-                    <label>Gambar</label>
-                    <input type="file" accept="image/*" onchange="loadFile(event)" id="gambar" name="gambar">
-                </div>
-                <a href="<?= site_url('ruang') ?>" class="ui red animated button" tabindex="0">
-                    <div class="visible content">Kembali</div>
-                    <div class="hidden content">
-                        <i class="left arrow icon"></i>
-                    </div>
-                </a>
-                <button class="ui green button" type="submit">Tambah</button>
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Tambah Data</h1>
             </div>
-        </form>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- SELECT2 EXAMPLE -->
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title">Form Tambah</h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-remove"></i></button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <form action="<?= site_url('ruang/tambah') ?>" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="ruang">Nama Ruangan</label>
+                                <input type="text" class="form-control" name="ruang" id="ruang" value="<?= set_value('ruang') ?>" placeholder="Nama Barang">
+                                <?php if (form_error('ruang')) : ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?= form_error('ruang') ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="fungsi">Fungsi Ruangan</label>
+                                <textarea name="fungsi" class="form-control" id="fungsi" cols="30" rows="2" placeholder="Fungsi Ruangan"></textarea>
+                                <?php if (form_error('ruang')) : ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?= form_error('ruang') ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="form-group">
+                                <label for="luas">Luas Ruangan</label>
+                                <input type="text" name="luas" id="luas" class="form-control" placeholder="Luas Ruangan">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="gambar"><img class="img-fluid" src="<?= base_url() ?>assets/img/noimage.png" id="output"></label>
+                            </div>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="image/*" onchange="loadFile(event)" id="gambar" name="gambar">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                </div>
+                            </div>
+                            <div class="form-group mt-2">
+                                <a href="<?= site_url('ruang') ?>" class="btn btn-info float-left">Kembali</a>
+                                <button class="btn btn-success float-right" type="submit">Tambah</button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
-</div>
+    </div><!-- /.container-fluid -->
+</section>
 <script>
     var loadFile = function(event) {
         var output = document.getElementById('output');
