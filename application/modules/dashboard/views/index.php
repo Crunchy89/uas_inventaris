@@ -23,6 +23,7 @@
                       <th rowspan="2">No</th>
                       <th rowspan="2">Nama Barang</th>
                       <th rowspan="2">Jumlah Barang</th>
+                      <th rowspan="2">Merek</th>
                       <th colspan="<?= count($kondisi) ?>" style="text-align:center">Keadaan</th>
                       <th rowspan="2">Tempat</th>
                       <th rowspan="2">Sumber</th>
@@ -44,6 +45,7 @@
                         <td><?= $i++ ?></td>
                         <td><?= $row->nama_barang ?></td>
                         <td><?= count($this->db->get_where("inventaris", ['nama_barang' => $row->nama_barang, 'id_ruangan' => $row->id_ruangan])->result()) ?></td>
+                        <td><?= $row->merek ?></td>
                         <?php foreach ($kondisi as $rows) { ?>
                           <td>
                             <?= count($this->db->get_where('inventaris', ['id_kondisi' => $rows->id_kondisi, 'nama_barang' => $row->nama_barang, 'id_ruangan' => $row->id_ruangan])->result_array()) ?>
